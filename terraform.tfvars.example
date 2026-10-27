@@ -1,0 +1,26 @@
+# Copy to terraform.tfvars and fill in your values.
+# Do NOT commit terraform.tfvars to source control.
+
+ibmcloud_api_key    = "<YOUR_IBM_CLOUD_API_KEY>"
+region              = "us-south"
+prefix              = "ocp-platform"
+resource_group_name = "ocp-platform-rg"
+
+# VPC
+vpc_name             = "main"
+enable_vpc_flow_logs = false
+
+# OpenShift cluster
+cluster_name         = "roks-cluster"
+ocp_version          = "4.16"
+worker_machine_type  = "bx2.4x16"
+workers_per_zone     = 1
+worker_os            = "REDHAT_8_64"
+disable_public_endpoint = false
+
+# COS
+cos_instance_name = "ocp-cos"
+
+# Tags
+resource_tags = ["env:dev", "project:container-platform"]
+access_tags   = []
